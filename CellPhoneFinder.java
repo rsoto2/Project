@@ -1,5 +1,8 @@
+
 import java.util.*;
 import java.io.*;
+
+
 
 public class CellPhoneFinder {
     private static ArrayList<Tile> accounts = new ArrayList<Tile>();
@@ -13,13 +16,55 @@ public class CellPhoneFinder {
             if (id == accounts.get(i).id)
                 accounts.get(i).print();
         }
+
     }
 
     public static void addUsers(int id, String name) {
         for (int i = 0; i < accounts.size(); i++) {
             if (id == accounts.get(i).id)
                 accounts.get(i).otherUsers.add(name);
+
+        
+      
+
         }
+
+
+
+    public static HashSet<String> showUsers()
+    {
+        HashSet<String> person = new HashSet<String>();
+
+        System.out.println("Do you want to add a person to account? ");
+        Scanner scan = new Scanner(System.in);
+        String answer = scan.next();
+        if(answer.equals("yes") || answer.equals("Yes")) {
+
+            System.out.print("Enter first name: ");
+            String firstName = scan.next();
+
+            System.out.print("Enter last name: ");
+            String lastName = scan.next();
+
+            person.add("Toe, Pickles");
+            person.add(firstName + ", " + lastName);
+
+            System.out.println("List of people on account:");
+            Iterator<String> i = person.iterator();
+            while (i.hasNext())
+                System.out.println(i.next());
+
+
+        }
+
+        else if (answer.equals("no")) {
+            System.out.println("Have a nice day!");
+
+        }
+
+        return person;
+
+    }
     }
 
     public static void main(String args[]) throws IOException {
