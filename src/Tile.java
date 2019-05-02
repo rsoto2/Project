@@ -3,7 +3,7 @@ import java.io.*;
 
 /*
  *  Holds user data, variables are public, they are accessbike
- *  through dot operatior. EX: tile.id would equal the value.
+ *  through dot operator. EX: tile.id would equal the value.
 */
 public class Tile {
     public int id;
@@ -17,7 +17,7 @@ public class Tile {
     }
 
     /*
-     * Simple toString() method, could possilby save time later on. It's also a way
+     * Simple toString() method, could possibly save time later on. It's also a way
      * to easily display information.
      */
     public void print() {

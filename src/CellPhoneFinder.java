@@ -19,16 +19,16 @@ public class CellPhoneFinder {
 
     }
 
-    public static void addUsers(int id, String name) {
-        for (int i = 0; i < accounts.size(); i++) {
+    public static void addUsers(int id, String name)
+    {
+        for (int i = 0; i < accounts.size(); i++)
+        {
             if (id == accounts.get(i).id)
                 accounts.get(i).otherUsers.add(name);
 
-        
-      
 
         }
-
+    }
 
 
     public static HashSet<String> showUsers()
@@ -65,12 +65,7 @@ public class CellPhoneFinder {
         return person;
 
     }
-    }
 
-    public static void main(String args[]) throws IOException {
-        registerTag(8675309, "Pickles, Toe", "Within phone proximity");
-        retrieveTag(8675309);
-        addUsers(8675309, "my guy");
-        retrieveTag(8675309);
-    }
+
+
 }
