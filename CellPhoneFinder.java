@@ -29,9 +29,26 @@ public class CellPhoneFinder {
 
         }
 
+        public static void deleteUser(int id, String user){
+            for(int i = 0; i < accounts.size(); i++)
+            {
+                if(accounts.get(i).id == id)
+                {
+                    for(j = 0; j < accounts.get(i).otherUsers.size(); j++)
+                    {
+                        if(accounts.get(i).otherUsers.get(j) == user)
+                            accounts.get(i).otherUsers.remove(j);
+                    }
+                }
+            }
+        }
 
 
-    public static HashSet<String> showUsers()
+
+
+
+
+        public static HashSet<String> showUsers()
     {
         HashSet<String> person = new HashSet<String>();
 
