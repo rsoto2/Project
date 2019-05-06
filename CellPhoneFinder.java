@@ -3,7 +3,7 @@ import java.util.*;
 import java.io.*;
 
 public class CellPhoneFinder {
-    private static ArrayList<Tile> accounts = new ArrayList<Tile>();
+    private static ArrayList<TileKnockOff> accounts = new ArrayList<TileKnockOff>();
 
     public static void registerTag(int id, String owner, String location) throws IOException {
         accounts.add(new TileKnockOff(id, owner, location));

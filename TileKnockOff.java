@@ -5,12 +5,12 @@ import java.io.*;
  *  Holds user data, variables are public, they are accessbike
  *  through dot operatior. EX: tile.id would equal the value.
 */
-public class Tile {
+public class TileKnockOff {
     public int id;
     public String owner, location;
     public ArrayList<String> otherUsers = new ArrayList<String>();
 
-    public Tile(int id, String owner, String location) {
+    public TileKnockOff(int id, String owner, String location) {
         this.id = id;
         this.owner = owner;
         this.location = location;
