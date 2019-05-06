@@ -2,8 +2,6 @@
 import java.util.*;
 import java.io.*;
 
-
-
 public class CellPhoneFinder {
     private static ArrayList<Tile> accounts = new ArrayList<Tile>();
 
@@ -19,18 +17,14 @@ public class CellPhoneFinder {
 
     }
 
-    public static void bypasser(int id, string loc)
-    {
-        for(int i = 0; i < accounts.size(); i++)
-        {
-            if(accounts.get(i).id == id)
-            {
+    public static void bypasser(int id, String loc) {
+        for (int i = 0; i < accounts.size(); i++) {
+            if (accounts.get(i).id == id) {
                 accounts.get(i).location = loc;
                 retrieveTag(id);
             }
         }
     }
-
 
     public static void addUsers(int id, String name) {
         for (int i = 0; i < accounts.size(); i++) {
@@ -40,34 +34,25 @@ public class CellPhoneFinder {
         }
     }
 
-            //delete users
-        public static void deleteUser(int id, String user){
-            for(int i = 0; i < accounts.size(); i++)
-            {
-                if(accounts.get(i).id == id)
-                {
-                    for(j = 0; j < accounts.get(i).otherUsers.size(); j++)
-                    {
-                        if(accounts.get(i).otherUsers.get(j) == user)
-                            accounts.get(i).otherUsers.remove(j);
-                    }
+    // delete users
+    public static void deleteUser(int id, String user) {
+        for (int i = 0; i < accounts.size(); i++) {
+            if (accounts.get(i).id == id) {
+                for (int j = 0; j < accounts.get(i).otherUsers.size(); j++) {
+                    if (accounts.get(i).otherUsers.get(j) == user)
+                        accounts.get(i).otherUsers.remove(j);
                 }
-            }
-        }
-
-
-    public static void deleteAccount(int id)
-    {
-        for(int i = 0; i < accounts.size(); i++)
-        {
-            if(accounts.get(i).id == id)
-            {
-                accounts.remove(i);
             }
         }
     }
 
-
+    public static void deleteAccount(int id) {
+        for (int i = 0; i < accounts.size(); i++) {
+            if (accounts.get(i).id == id) {
+                accounts.remove(i);
+            }
+        }
+    }
 
     public static void main(String args[]) throws IOException {
         registerTag(8675309, "Pickles, Toe", "Within phone proximity");
