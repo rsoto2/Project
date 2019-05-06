@@ -19,15 +19,27 @@ public class CellPhoneFinder {
 
     }
 
+    public static void bypasser(int id, string loc)
+    {
+        for(int i = 0; i < accounts.size(); i++)
+        {
+            if(accounts.get(i).id == id)
+            {
+                accounts.get(i).location = loc;
+                retrieveTag(id);
+            }
+        }
+    }
+
+
     public static void addUsers(int id, String name) {
         for (int i = 0; i < accounts.size(); i++) {
             if (id == accounts.get(i).id)
                 accounts.get(i).otherUsers.add(name);
 
-        
-      
-
         }
+    }
+
             //delete users
         public static void deleteUser(int id, String user){
             for(int i = 0; i < accounts.size(); i++)
@@ -44,45 +56,18 @@ public class CellPhoneFinder {
         }
 
 
-
-
-
-
-        public static HashSet<String> showUsers()
+    public static void deleteAccount(int id)
     {
-        HashSet<String> person = new HashSet<String>();
-
-        System.out.println("Do you want to add a person to account? ");
-        Scanner scan = new Scanner(System.in);
-        String answer = scan.next();
-        if(answer.equals("yes") || answer.equals("Yes")) {
-
-            System.out.print("Enter first name: ");
-            String firstName = scan.next();
-
-            System.out.print("Enter last name: ");
-            String lastName = scan.next();
-
-            person.add("Toe, Pickles");
-            person.add(firstName + ", " + lastName);
-
-            System.out.println("List of people on account:");
-            Iterator<String> i = person.iterator();
-            while (i.hasNext())
-                System.out.println(i.next());
-
-
+        for(int i = 0; i < accounts.size(); i++)
+        {
+            if(accounts.get(i).id == id)
+            {
+                accounts.remove(i);
+            }
         }
-
-        else if (answer.equals("no")) {
-            System.out.println("Have a nice day!");
-
-        }
-
-        return person;
-
     }
-    }
+
+
 
     public static void main(String args[]) throws IOException {
         registerTag(8675309, "Pickles, Toe", "Within phone proximity");
