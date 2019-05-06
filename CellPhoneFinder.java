@@ -18,6 +18,16 @@ public class CellPhoneFinder {
         }
 
     }
+    
+    //I think this is what you guys told me it would be like...?
+    public static void lastKnownLocation(int id, string location) {
+    	if (id == 8675309) {
+    		System.out.println("Within proximity");
+    	}
+    	else {
+    		System.out.println("Not in proxmity, last saved location: " + location);
+    	}
+    }
 
     public static void addUsers(int id, String name) {
         for (int i = 0; i < accounts.size(); i++) {
