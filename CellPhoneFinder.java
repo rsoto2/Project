@@ -6,7 +6,7 @@ public class CellPhoneFinder {
     private static ArrayList<Tile> accounts = new ArrayList<Tile>();
 
     public static void registerTag(int id, String owner, String location) throws IOException {
-        accounts.add(new Tile(id, owner, location));
+        accounts.add(new TileKnockOff(id, owner, location));
     }
 
     public static void retrieveTag(int id) {
